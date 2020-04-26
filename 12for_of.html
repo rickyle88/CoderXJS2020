@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="contact-list">
+
+    </ul>
+
+    <script>
+        var employees = [
+            { name: 'A', age: 28 },
+            { name: 'B', age: 26 },
+            { name: 'C', age: 32 }
+        ];
+
+        let ulContent = '';
+
+        for (let e of employees) {
+            ulContent += '<li>' + e.name + '</li>';
+        }
+
+        let utElement = document.getElementById('contact-list');
+        utElement.innerHTML = ulContent;
+
+    </script>
+</body>
+
+</html>
