@@ -2,6 +2,7 @@ var promisefs = require('promise-fs');
 
 var song1 = './song1.txt';
 var song2 = './song2.txt';
+var song3 = './song3.txt';
 
 // function onDone(song){
 //     console.log(song);
@@ -58,4 +59,20 @@ readFilePromise(song1)
     })
     .then(function(res){
         console.log(res);
+        return readFilePromise(song3);
     })
+    .then(function(res){
+        console.log(res);
+    })
+
+
+Promise.all([
+    readFilePromise(song1),
+    readFilePromise(song2),
+    readFilePromise(song3)
+]).then(function(res){
+    // called when all promises resolved
+   console.log(res);
+}).catch(function(err){
+    console.log(err);
+})
